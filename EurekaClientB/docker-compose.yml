@@ -1,0 +1,12 @@
+version: '3'
+services:
+  service-b:
+    image: 'service-b'
+    ports:
+      - '8900:8900'
+    environment:
+      - EUREKA_SERVER_NAME=eureka-server
+      - EUREKA_SERVER_PORT=8761
+      - PORT=8900
+    links:
+      - eureka-server 
